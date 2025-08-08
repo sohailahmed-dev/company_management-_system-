@@ -1,0 +1,196 @@
+.dashboard-container {
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.back-button {
+  background-color: #00C49F;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ========== COMPANY CARD STYLING (UNIFORM) ========== */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: rgb(215, 210, 210);
+  color: black;
+  border: none;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(16, 16, 16, 0.15);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(7, 7, 7, 0.25);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ========== TOTALS BOX ========== */
+.totals-box {
+  background-color: #ffffff;
+  border: 2px dashed #00C49F;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.totals-box h3 {
+  margin-bottom: 16px;
+  text-align: center;
+  color: #00C49F;
+}
+
+.totals-box p {
+  font-size: 16px;
+  margin: 6px 0;
+  color: #333;
+}
+
+/* ========== CATEGORY BOX ========== */
+.category-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.category-combined-box {
+  border: 2px solid #00C49F;
+  border-radius: 14px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  max-height: 600px;
+  overflow-y: auto;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.category-combined-box h3 {
+  color: #00C49F;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* TABS (Revenue/Expense) */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tab-buttons button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1.5px solid #00C49F;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+  color: #00C49F;
+}
+
+.tab-buttons .tab-active {
+  background-color: #00C49F;
+  color: white;
+}
+
+/* SUBTABLE */
+.subtable {
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.subtable table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.subtable th, .subtable td {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.subtable th {
+  background-color: #00C49F;
+  color: white;
+}
+
+/* SCROLLBAR */
+.category-combined-box::-webkit-scrollbar {
+  width: 8px;
+}
+.category-combined-box::-webkit-scrollbar-thumb {
+  background: #00C49F;
+  border-radius: 10px;
+}
+.dashboard-chart-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.dashboard-chart-box {
+  flex: 1;
+  min-width: 450px;
+  height: 260px;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .tab-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subtable {
+    overflow-x: auto;
+  }
+
+  .category-combined-box {
+    max-height: none;
+  }
+}
